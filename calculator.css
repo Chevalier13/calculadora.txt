@@ -1,0 +1,135 @@
+/* Estilos Globais */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--background-gradient);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    transition: background 0.5s ease;
+}
+
+/* Variáveis para temas */
+:root {
+    --background-gradient: linear-gradient(to right, #00c6ff, #0072ff);
+    --button-bg: #e0e0e0;
+    --button-hover-bg: #d1d1d1;
+    --operator-bg: #ffa500;
+    --operator-hover-bg: #ff8c00;
+    --text-color: #fff;
+}
+
+body.dark {
+    --background-gradient: linear-gradient(to right, #333, #111);
+    --button-bg: #444;
+    --button-hover-bg: #555;
+    --operator-bg: #ff5722;
+    --operator-hover-bg: #e64a19;
+    --text-color: #f1f1f1;
+}
+
+body.pastel {
+    --background-gradient: linear-gradient(to right, #f9d5e5, #fccde2);
+    --button-bg: #e6e6fa;
+    --button-hover-bg: #d8bfd8;
+    --operator-bg: #ffb6c1;
+    --operator-hover-bg: #ff69b4;
+    --text-color: #5a5a5a;
+}
+
+body.neon {
+    --background-gradient: linear-gradient(to right, #1d2b64, #f8cdda);
+    --button-bg: #ffffff;
+    --button-hover-bg: #333;
+    --operator-bg: #00e676;
+    --operator-hover-bg: #00c853;
+    --text-color: #ffffff; /* Ajuste a cor dos números para branco no tema Neon */
+}
+
+/* Estilo do seletor de tema */
+.theme-selector {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.calculator {
+    background-color: var(--button-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.display {
+    background-color: #1e1e1e;
+    padding: 20px;
+    font-size: 2rem;
+    color: var(--text-color);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+#display {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    color: var(--text-color);
+    text-align: right;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: var(--button-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Remova a animação de pulo */
+.btn:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.operator {
+    background-color: var(--operator-bg);
+    color: var(--text-color);
+}
+
+.operator:hover {
+    background-color: var(--operator-hover-bg);
+}
+
+.equals {
+    grid-column: span 2;
+    background-color: #66bb6a;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.equals:hover {
+    background-color: #43a047;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.zero {
+    grid-column: span 2;
+}
